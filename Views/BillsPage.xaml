@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="quick_split.Views.BillsPage"
+    Title="Quick Split"
+    BackgroundColor="#F9FAFB">
+
+    <Grid>
+
+        <!-- Main Content -->
+        <ScrollView Grid.Row="1"
+                    Padding="16,24">
+            <VerticalStackLayout Spacing="16">
+
+                <!-- Weekend Trip Card -->
+                <Frame BackgroundColor="White"
+                       CornerRadius="12"
+                       Padding="16"
+                       HasShadow="True"
+                       BorderColor="#E5E7EB"
+                       x:Name="WeekendTripCard">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnBillCardTapped"/>
+                    </Frame.GestureRecognizers>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <VerticalStackLayout Grid.Column="0"
+                                                 Spacing="4">
+                                <Label Text="Weekend Trip"
+                                       FontSize="18"
+                                       FontAttributes="Bold"
+                                       TextColor="#111827"/>
+
+                                <HorizontalStackLayout Spacing="-8">
+                                    <Frame BackgroundColor="Transparent"
+                                           WidthRequest="24"
+                                           HeightRequest="24"
+                                           CornerRadius="12"
+                                           Padding="0">
+                                        <Image Source="https://lh3.googleusercontent.com/aida-public/AB6AXuBf8KQttebUaxGyO6_QPtjuKpJwVWB9NdXcmig7-TsccsZFReu_os2IdAgvMPwzhYpsfB3KYDgchLNfqxK7iX3RN2F5WBbrDsXWrVDt7RZo4-WD8hLWRX6WavVEwTbUg9cXHvMytnok2HZp2xBSfFqVebY_v2S7HZ-NfN_oYK6aO-aUvJm-AcEpmO3Hcqb6Tx-fLjOA6fbky-Q9hlCwOh0R5yTq39Vz-ojN6QhuUgPuGtCmjMkmneSgNoT28wYgJGWMjB7KSHDRdgip"
+                                               Aspect="AspectFill"/>
+                                    </Frame>
+                                    <Frame BackgroundColor="Transparent"
+                                           WidthRequest="24"
+                                           HeightRequest="24"
+                                           CornerRadius="12"
+                                           Padding="0">
+                                        <Image Source="https://lh3.googleusercontent.com/aida-public/AB6AXuDi5Yqh-XIs-F-chhNVUuhX6xZxJnjoPX29Chm0BZF8WjZa9tMLur1TZpeKcxincIniEymOjs8XjJ_jsacGRoPUabwfw-Rpgs-Y14PxOdT9I5UZU-QEDnAZwf-Hk4YitZ11Ue8FMXnfZDPMPG3q4jEQD9nlTUqhwHHUkWzE7oQv1yTUm9F8xtQiFR8TY5KZDqWDBq3ftq8faZ_fgVx6K__Rto7EvYp1aAA58xv49sMFwG2cgzncHEkNAaALGQfcIon5TBIiD9guyZn-"
+                                               Aspect="AspectFill"/>
+                                    </Frame>
+                                    <Frame BackgroundColor="#F3F4F6"
+                                           WidthRequest="24"
+                                           HeightRequest="24"
+                                           CornerRadius="12"
+                                           Padding="0">
+                                        <Label Text="+3"
+                                               FontSize="10"
+                                               FontAttributes="Bold"
+                                               TextColor="#6B7280"
+                                               HorizontalOptions="Center"
+                                               VerticalOptions="Center"/>
+                                    </Frame>
+                                </HorizontalStackLayout>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout Grid.Column="1"
+                                                 Spacing="2"
+                                                 HorizontalOptions="End">
+                                <Label Text="Rp1.889.000"
+                                       FontSize="18"
+                                       FontAttributes="Bold"
+                                       TextColor="#16A34A"
+                                       HorizontalOptions="End"/>
+                                <Label Text="Total Rp5.667.000"
+                                       FontSize="12"
+                                       TextColor="#6B7280"
+                                       HorizontalOptions="End"/>
+                            </VerticalStackLayout>
+                        </Grid>
+
+                        <Label Grid.Row="1"
+                               Text="Oct 25, 2023"
+                               FontSize="12"
+                               TextColor="#6B7280"
+                               HorizontalOptions="End"
+                               Margin="0,12,0,0"/>
+                    </Grid>
+                </Frame>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Floating Action Button -->
+        <Button Grid.Row="2"
+                Text="+"
+                FontSize="28"
+                BackgroundColor="#16A34A"
+                TextColor="White"
+                HorizontalOptions="End"
+                VerticalOptions="End"
+                Margin="16"
+                Clicked="OnAddBillTapped"
+                WidthRequest="64"
+                HeightRequest="64"
+                CornerRadius="32"/>
+    </Grid>
+
+</ContentPage>
