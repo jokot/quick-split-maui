@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="quick_split.Views.AddBillPage"
+             Title="New Split Bill"
+             BackgroundColor="White">
+
+       <Grid>
+              <Grid.RowDefinitions>
+                     <RowDefinition Height="Auto"/>
+                     <RowDefinition Height="*"/>
+                     <RowDefinition Height="Auto"/>
+              </Grid.RowDefinitions>
+
+              <!-- Main Content -->
+              <ScrollView Grid.Row="1"
+                          Padding="16,12">
+                     <VerticalStackLayout Spacing="24">
+
+                            <!-- Bill Name Input -->
+                            <Frame BackgroundColor="#F0FDF4"
+                                   CornerRadius="12"
+                                   Padding="16"
+                                   HasShadow="False">
+                                   <Entry Placeholder="Split bill name"
+                                          FontSize="16"
+                                          FontAttributes="Bold"
+                                          TextColor="#111827"
+                                          PlaceholderColor="#4B5563"
+                                          HeightRequest="56"/>
+                            </Frame>
+
+                            <!-- Members Section -->
+                            <VerticalStackLayout Spacing="12">
+                                   <Label Text="Members"
+                                          FontSize="18"
+                                          FontAttributes="Bold"
+                                          TextColor="#111827"/>
+
+                                   <ScrollView Orientation="Horizontal"
+                                               HorizontalScrollBarVisibility="Never">
+                                          <HorizontalStackLayout Spacing="16"
+                                                                 Padding="0,0,0,8">
+
+                                                 <!-- Add Member Button -->
+                                                 <VerticalStackLayout Spacing="8"
+                                                                      HorizontalOptions="Center">
+                                                        <Frame BackgroundColor="#16A34A"
+                                                               WidthRequest="44"
+                                                               HeightRequest="44"
+                                                               CornerRadius="22"
+                                                               Padding="0">
+                                                               <Label Text="+"
+                                                                      FontSize="24"
+                                                                      FontAttributes="Bold"
+                                                                      TextColor="White"
+                                                                      HorizontalOptions="Center"
+                                                                      VerticalOptions="Center"/>
+                                                               <Frame.GestureRecognizers>
+                                                                      <TapGestureRecognizer Command="{Binding AddMemberCommand}"/>
+                                                               </Frame.GestureRecognizers>
+                                                        </Frame>
+                                                        <Label Text="Add"
+                                                               FontSize="14"
+                                                               FontAttributes="Bold"
+                                                               TextColor="#16A34A"
+                                                               HorizontalOptions="Center"/>
+                                                 </VerticalStackLayout>
+
+                                                 <!-- Member 1 -->
+                                                 <VerticalStackLayout Spacing="8"
+                                                                      HorizontalOptions="Center">
+                                                        <Frame BackgroundColor="Transparent"
+                                                               WidthRequest="44"
+                                                               HeightRequest="44"
+                                                               CornerRadius="22"
+                                                               Padding="0"
+                                                               BorderColor="White">
+                                                               <Image Source="https://lh3.googleusercontent.com/aida-public/AB6AXuDGoZU2-ATzCraZyiAe37wj3vRjeEas3ugh77KQL0lKZlZKofRk-yWoW1xz7w5-GPauBr-g4vaEwavjbRrOK-hagdgSVQ6cXiLzEg8LgCHnF6FD63HGwSwHkYdpw8ByTq2g8cVtUb9aL1Z8SsM0mCildn-loP6PlidtGNIHcR0PiRHch24v-i0w2L4tt82u4S0cEbDfn0G4pbYDw9uznDQJHkGPHEHurLvf33QEReOjy5EBTkEA50QCYhSCfrGVOFP5Pm1GzYqUcH8T"
+                                                                      Aspect="AspectFill"/>
+                                                        </Frame>
+                                                        <Label Text="Olivia"
+                                                               FontSize="14"
+                                                               FontAttributes="Bold"
+                                                               TextColor="#374151"
+                                                               HorizontalOptions="Center"/>
+                                                 </VerticalStackLayout>
+
+                                                 <!-- Member 2 (Selected) -->
+                                                 <VerticalStackLayout Spacing="8"
+                                                                      HorizontalOptions="Center">
+                                                        <Grid>
+                                                               <Frame BackgroundColor="Transparent"
+                                                                      WidthRequest="44"
+                                                                      HeightRequest="44"
+                                                                      CornerRadius="22"
+                                                                      Padding="0"
+                                                                      BorderColor="#16A34A"/>
+                                                               <Frame BackgroundColor="#16A34A"
+                                                                      WidthRequest="44"
+                                                                      HeightRequest="44"
+                                                                      CornerRadius="22"
+                                                                      Padding="0"
+                                                                      Opacity="0.5">
+                                                                      <Label Text="✓"
+                                                                             FontSize="20"
+                                                                             FontAttributes="Bold"
+                                                                             TextColor="White"
+                                                                             HorizontalOptions="Center"
+                                                                             VerticalOptions="Center"/>
+                                                               </Frame>
+                                                        </Grid>
+                                                        <Label Text="James"
+                                                               FontSize="14"
+                                                               FontAttributes="Bold"
+                                                               TextColor="#16A34A"
+                                                               HorizontalOptions="Center"/>
+                                                 </VerticalStackLayout>
+
+                                                 <!-- Member 3 -->
+                                                 <VerticalStackLayout Spacing="8"
+                                                                      HorizontalOptions="Center">
+                                                        <Frame BackgroundColor="Transparent"
+                                                               WidthRequest="44"
+                                                               HeightRequest="44"
+                                                               CornerRadius="22"
+                                                               Padding="0"
+                                                               BorderColor="White">
+                                                               <Image Source="https://lh3.googleusercontent.com/aida-public/AB6AXuA4eKC3Dz9Z2B4RDNx96dtScO7zn_hqLfkxmqHAP8mjfqHNi7z--ztPbeY3no52Dy0QhMFGSg8xd3-WCaOwFODrVMdR5LFhcVcRY1xGKQ-GMgmZ7tnpWqqYwVJO6Q23h9sDqZqSfWUxNfyQeccxQbYOu8QHG9bM4TwWcKmeocE6C59x9yQGzKN16lyRXFdEJHVzJbV6bFwCy-DEiPDx2lBy8hW5NX8CN8b33wDlp-lFZjsC5bPWnljz5RPvA8x9EWvpwJ-B6QUKWbiL"
+                                                                      Aspect="AspectFill"/>
+                                                        </Frame>
+                                                        <Label Text="Sophia"
+                                                               FontSize="14"
+                                                               FontAttributes="Bold"
+                                                               TextColor="#374151"
+                                                               HorizontalOptions="Center"/>
+                                                 </VerticalStackLayout>
+                                          </HorizontalStackLayout>
+                                   </ScrollView>
+                            </VerticalStackLayout>
+
+                            <!-- Items Section -->
+                            <VerticalStackLayout Spacing="16">
+                                   <Grid>
+                                          <Label Grid.Column="0"
+                                                 Text="Items"
+                                                 FontSize="18"
+                                                 FontAttributes="Bold"
+                                                 TextColor="#111827"/>
+                                          <Button Grid.Column="1"
+                                                  Text="Add Item"
+                                                  BackgroundColor="#16A34A"
+                                                  TextColor="White"
+                                                  FontSize="14"
+                                                  FontAttributes="Bold"
+                                                  HeightRequest="40"
+                                                  CornerRadius="20"
+                                                  HorizontalOptions="End"/>
+                                   </Grid>
+
+                                   <!-- Add Item Form -->
+                                   <Frame BackgroundColor="#F0FDF4"
+                                          CornerRadius="12"
+                                          Padding="16"
+                                          BorderColor="#16A34A">
+                                          <VerticalStackLayout Spacing="16">
+
+                                                 <Entry Placeholder="Item Name"
+                                                        FontSize="16"
+                                                        FontAttributes="Bold"
+                                                        TextColor="#111827"
+                                                        PlaceholderColor="#4B5563"
+                                                        HeightRequest="48"
+                                                        BackgroundColor="White"/>
+
+                                                 <Grid ColumnSpacing="16">
+                                                        <Grid.ColumnDefinitions>
+                                                               <ColumnDefinition Width="*"/>
+                                                               <ColumnDefinition Width="*"/>
+                                                        </Grid.ColumnDefinitions>
+
+                                                        <Entry Grid.Column="0"
+                                                               Placeholder="Quantity"
+                                                               FontSize="16"
+                                                               FontAttributes="Bold"
+                                                               TextColor="#111827"
+                                                               PlaceholderColor="#4B5563"
+                                                               HeightRequest="48"
+                                                               BackgroundColor="White"
+                                                               Text="1"/>
+
+                                                        <Grid Grid.Column="1">
+                                                               <Label Text="$"
+                                                                      FontSize="16"
+                                                                      FontAttributes="Bold"
+                                                                      TextColor="#111827"
+                                                                      HorizontalOptions="Start"
+                                                                      VerticalOptions="Center"
+                                                                      Margin="12,0,0,0"/>
+                                                               <Entry Placeholder="0.00"
+                                                                      FontSize="16"
+                                                                      FontAttributes="Bold"
+                                                                      TextColor="#111827"
+                                                                      PlaceholderColor="#4B5563"
+                                                                      HeightRequest="48"
+                                                                      BackgroundColor="White"
+                                                                      HorizontalTextAlignment="End"
+                                                                      Margin="0,0,12,0"/>
+                                                        </Grid>
+                                                 </Grid>
+
+                                                 <Grid>
+                                                        <Label Text="-$"
+                                                               FontSize="16"
+                                                               FontAttributes="Bold"
+                                                               TextColor="#16A34A"
+                                                               HorizontalOptions="Start"
+                                                               VerticalOptions="Center"
+                                                               Margin="12,0,0,0"/>
+                                                        <Entry Placeholder="Discount (optional)"
+                                                               FontSize="16"
+                                                               FontAttributes="Bold"
+                                                               TextColor="#16A34A"
+                                                               PlaceholderColor="#9CA3AF"
+                                                               HeightRequest="48"
+                                                               BackgroundColor="White"
+                                                               HorizontalTextAlignment="End"
+                                                               Margin="0,0,12,0"/>
+                                                 </Grid>
+
+                                                 <HorizontalStackLayout Spacing="8"
+                                                                        HorizontalOptions="End">
+                                                        <Button Text="Cancel"
+                                                                BackgroundColor="#E5E7EB"
+                                                                TextColor="#111827"
+                                                                FontSize="14"
+                                                                FontAttributes="Bold"
+                                                                HeightRequest="40"
+                                                                CornerRadius="20"/>
+                                                        <Button Text="Add Item"
+                                                                BackgroundColor="#16A34A"
+                                                                TextColor="White"
+                                                                FontSize="14"
+                                                                FontAttributes="Bold"
+                                                                HeightRequest="40"
+                                                                CornerRadius="20"/>
+                                                 </HorizontalStackLayout>
+                                          </VerticalStackLayout>
+                                   </Frame>
+
+                                   <!-- Existing Item -->
+                                   <Frame BackgroundColor="White"
+                                          CornerRadius="8"
+                                          Padding="12"
+                                          HasShadow="False">
+                                          <Grid>
+                                                 <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                 </Grid.ColumnDefinitions>
+
+                                                 <VerticalStackLayout Grid.Column="0"
+                                                                      Spacing="4">
+                                                        <Label Text="Chicken Salad"
+                                                               FontSize="16"
+                                                               FontAttributes="Bold"
+                                                               TextColor="#111827"/>
+                                                        <Label Text="1x"
+                                                               FontSize="14"
+                                                               TextColor="#4B5563"/>
+                                                        <HorizontalStackLayout Spacing="-8"
+                                                                               Margin="0,8,0,0">
+                                                               <Frame WidthRequest="24"
+                                                                      HeightRequest="24"
+                                                                      CornerRadius="12"
+                                                                      BorderColor="White"
+                                                                      Padding="0"/>
+                                                        </HorizontalStackLayout>
+                                                 </VerticalStackLayout>
+
+                                                 <Label Grid.Column="1"
+                                                        Text="$12.99"
+                                                        FontSize="16"
+                                                        FontAttributes="Bold"
+                                                        TextColor="#111827"
+                                                        VerticalOptions="Center"
+                                                        Margin="0,0,12,0"/>
+
+                                                 <Button Grid.Column="2"
+                                                         Text="🗑"
+                                                         FontSize="16"
+                                                         TextColor="#EF4444"
+                                                         BackgroundColor="Transparent"
+                                                         WidthRequest="24"
+                                                         HeightRequest="24"/>
+                                          </Grid>
+                                   </Frame>
+                            </VerticalStackLayout>
+
+                            <!-- Shared Fees Section -->
+                            <VerticalStackLayout Spacing="12">
+                                   <Label Text="Shared fees"
+                                          FontSize="18"
+                                          FontAttributes="Bold"
+                                          TextColor="#111827"/>
+
+                                   <VerticalStackLayout Spacing="8">
+                                          <Grid Padding="12">
+                                                 <Label Grid.Column="0"
+                                                        Text="Service"
+                                                        FontSize="16"
+                                                        TextColor="#4B5563"
+                                                        VerticalOptions="Center"/>
+                                                 <Grid Grid.Column="1"
+                                                       HorizontalOptions="End">
+                                                        <Label Text="$"
+                                                               FontSize="16"
+                                                               FontAttributes="Bold"
+                                                               TextColor="#111827"
+                                                               HorizontalOptions="Start"
+                                                               VerticalOptions="Center"
+                                                               Margin="12,0,0,0"/>
+                                                        <Entry Text="2.50"
+                                                               FontSize="16"
+                                                               FontAttributes="Bold"
+                                                               TextColor="#111827"
+                                                               HeightRequest="32"
+                                                               BackgroundColor="#F9FAFB"
+                                                               HorizontalTextAlignment="End"
+                                                               WidthRequest="96"
+                                                               Margin="0,0,12,0"/>
+                                                 </Grid>
+                                          </Grid>
+
+                                          <Grid Padding="12">
+                                                 <Label Grid.Column="0"
+                                                        Text="Delivery"
+                                                        FontSize="16"
+                                                        TextColor="#4B5563"
+                                                        VerticalOptions="Center"/>
+                                                 <Grid Grid.Column="1"
+                                                       HorizontalOptions="End">
+                                                        <Label Text="$"
+                                                               FontSize="16"
+                                                               FontAttributes="Bold"
+                                                               TextColor="#111827"
+                                                               HorizontalOptions="Start"
+                                                               VerticalOptions="Center"
+                                                               Margin="12,0,0,0"/>
+                                                        <Entry Text="3.99"
+                                                               FontSize="16"
+                                                               FontAttributes="Bold"
+                                                               TextColor="#111827"
+                                                               HeightRequest="32"
+                                                               BackgroundColor="#F9FAFB"
+                                                               HorizontalTextAlignment="End"
+                                                               WidthRequest="96"
+                                                               Margin="0,0,12,0"/>
+                                                 </Grid>
+                                          </Grid>
+
+                                          <Grid Padding="12">
+                                                 <Label Grid.Column="0"
+                                                        Text="Discount"
+                                                        FontSize="16"
+                                                        TextColor="#4B5563"
+                                                        VerticalOptions="Center"/>
+                                                 <Grid Grid.Column="1"
+                                                       HorizontalOptions="End">
+                                                        <Label Text="-$"
+                                                               FontSize="16"
+                                                               FontAttributes="Bold"
+                                                               TextColor="#16A34A"
+                                                               HorizontalOptions="Start"
+                                                               VerticalOptions="Center"
+                                                               Margin="12,0,0,0"/>
+                                                        <Entry Text="5.00"
+                                                               FontSize="16"
+                                                               FontAttributes="Bold"
+                                                               TextColor="#16A34A"
+                                                               HeightRequest="32"
+                                                               BackgroundColor="#F9FAFB"
+                                                               HorizontalTextAlignment="End"
+                                                               WidthRequest="96"
+                                                               Margin="0,0,12,0"/>
+                                                 </Grid>
+                                          </Grid>
+                                   </VerticalStackLayout>
+                            </VerticalStackLayout>
+                     </VerticalStackLayout>
+              </ScrollView>
+
+              <!-- Footer -->
+              <Frame Grid.Row="2"
+                     BackgroundColor="White"
+                     Padding="16,12"
+                     HasShadow="False">
+                     <Button Text="Split Bill"
+                             BackgroundColor="#16A34A"
+                             TextColor="White"
+                             FontSize="16"
+                             FontAttributes="Bold"
+                             HeightRequest="56"
+                             CornerRadius="28"
+                             HorizontalOptions="Fill"/>
+              </Frame>
+       </Grid>
+</ContentPage>
