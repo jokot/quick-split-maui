@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="quick_split.Views.DetailsPage"
+             Title="Details Page">
+    <!-- <VerticalStackLayout>
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+    </VerticalStackLayout> -->
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <ScrollView Grid.Row="0"
+                    Padding="16,24">
+            <VerticalStackLayout Spacing="24">
+
+                <Frame BackgroundColor="White"
+                       CornerRadius="16"
+                       Padding="24"
+                       HasShadow="True">
+                    <VerticalStackLayout Spacing="16">
+
+                        <Label Text="Items"
+                               FontSize="20"
+                               FontAttributes="Bold"
+                               TextColor="#374151"/>
+
+                        <VerticalStackLayout Spacing="12">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Frame Grid.Column="0"
+                                       BackgroundColor="Transparent"
+                                       WidthRequest="48"
+                                       HeightRequest="48"
+                                       CornerRadius="24"
+                                       Padding="0">
+                                    <Image Source="https://lh3.googleusercontent.com/aida-public/AB6AXuDoEbYutImZ54LrZu-gGDGvwzm8N45yNQ1uP5AclYZmA4qQKp9jrqjfq8YLqqM_18ul6cRlWuChnvVMOVQP2YxmIY9Cxp670xSNEEO2_lGwhxePdb2cmS5HyppRVUuOh27aciki232cvGPpHAw3-7ZgxYZlIe4o-VnSq2wSzWN-W6GMMfKqg4U23JimPg0tFqW_QDgPxSQ6JasZOCm9myTXhV07bXHWrqptIxNXY1ofDmzwd6VMh9yYTWVKNEvEMN1H3l07da3ax7m3"
+                                           Aspect="AspectFill"/>
+                                </Frame>
+
+                                <VerticalStackLayout Grid.Column="1"
+                                                     Spacing="2"
+                                                     Margin="16,0,0,0">
+                                    <Label Text="Liam Carter"
+                                           FontSize="16"
+                                           FontAttributes="Bold"
+                                           TextColor="#111827"/>
+                                    <Label Text="2 items"
+                                           FontSize="14"
+                                           TextColor="#6B7280"/>
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout Grid.Column="2"
+                                                     Spacing="2"
+                                                     HorizontalOptions="End">
+                                    <Label Text="Rp2.325.000"
+                                           FontSize="14"
+                                           FontAttributes="Bold"
+                                           TextColor="#111827"/>
+                                    <Label Text="▼"
+                                           FontSize="12"
+                                           TextColor="#6B7280"
+                                           HorizontalOptions="Center"/>
+                                </VerticalStackLayout>
+                            </Grid>
+
+                            <VerticalStackLayout Spacing="12"
+                                                 Margin="64,0,0,0">
+                                <Grid>
+                                    <Label Grid.Column="0"
+                                           Text="Flight"
+                                           FontSize="14"
+                                           TextColor="#374151"/>
+                                    <Label Grid.Column="1"
+                                           Text="Rp1.860.000"
+                                           FontSize="14"
+                                           FontAttributes="Bold"
+                                           TextColor="#374151"
+                                           HorizontalOptions="End"/>
+                                </Grid>
+                                <Grid>
+                                    <Label Grid.Column="0"
+                                           Text="Airport transfer"
+                                           FontSize="14"
+                                           TextColor="#374151"/>
+                                    <Label Grid.Column="1"
+                                           Text="Rp465.000"
+                                           FontSize="14"
+                                           FontAttributes="Bold"
+                                           TextColor="#374151"
+                                           HorizontalOptions="End"/>
+                                </Grid>
+                            </VerticalStackLayout>
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout Spacing="12">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Frame Grid.Column="0"
+                                       BackgroundColor="Transparent"
+                                       WidthRequest="48"
+                                       HeightRequest="48"
+                                       CornerRadius="24"
+                                       Padding="0">
+                                    <Image Source="https://lh3.googleusercontent.com/aida-public/AB6AXuBMmQFRfa31sHBuHm6Bt2xMla7u1xwRhpVWVJEKpyOzVI9yTNKv6l68I7JL0jm3eKgYbT2AE0zjql9ismxRRVRShubaHOuuKC6mBy-yllrncjwpBeAfER4KA7TRlPDx1Ul58rzli2tCB78GnOjVG1u7F3jZBXBMuzNTh-ClC14Z9jBsriXCbxj9StEM4z6oYw0AQ31fL_i6cLWdSuZcUkfY1ae1MeM3HGu-8QWxyU82qFdeq2I9Upp-6Z6tGBdFvBxckux-00hhwmqJ"
+                                           Aspect="AspectFill"/>
+                                </Frame>
+
+                                <VerticalStackLayout Grid.Column="1"
+                                                     Spacing="2"
+                                                     Margin="16,0,0,0">
+                                    <Label Text="Sophia Bennett"
+                                           FontSize="16"
+                                           FontAttributes="Bold"
+                                           TextColor="#111827"/>
+                                    <Label Text="1 item"
+                                           FontSize="14"
+                                           TextColor="#6B7280"/>
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout Grid.Column="2"
+                                                     Spacing="2"
+                                                     HorizontalOptions="End">
+                                    <Label Text="Rp3.100.000"
+                                           FontSize="14"
+                                           FontAttributes="Bold"
+                                           TextColor="#111827"/>
+                                    <Label Text="▼"
+                                           FontSize="12"
+                                           TextColor="#6B7280"
+                                           HorizontalOptions="Center"/>
+                                </VerticalStackLayout>
+                            </Grid>
+
+                            <VerticalStackLayout Spacing="12"
+                                                 Margin="64,0,0,0">
+                                <Grid>
+                                    <Label Grid.Column="0"
+                                           Text="Hotel"
+                                           FontSize="14"
+                                           TextColor="#374151"/>
+                                    <Label Grid.Column="1"
+                                           Text="Rp3.100.000"
+                                           FontSize="14"
+                                           FontAttributes="Bold"
+                                           TextColor="#374151"
+                                           HorizontalOptions="End"/>
+                                </Grid>
+                            </VerticalStackLayout>
+                        </VerticalStackLayout>
+
+                        <BoxView BackgroundColor="#E5E7EB"
+                                 HeightRequest="1"
+                                 Margin="0,16,0,16"/>
+                        <Grid>
+                            <Label Grid.Column="0"
+                                   Text="Total"
+                                   FontSize="18"
+                                   FontAttributes="Bold"
+                                   TextColor="#374151"/>
+                            <Label Grid.Column="1"
+                                   Text="Rp8.525.000 IDR"
+                                   FontSize="18"
+                                   FontAttributes="Bold"
+                                   TextColor="#374151"
+                                   HorizontalOptions="End"/>
+                        </Grid>
+
+                    </VerticalStackLayout>
+                </Frame>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <HorizontalStackLayout Grid.Row="1"
+                              BackgroundColor="White"
+                              Padding="16"
+                              Spacing="16">
+            <Button Text="Share"
+                    BackgroundColor="#16A34A"
+                    TextColor="White"
+                    FontSize="16"
+                    FontAttributes="Bold"
+                    HorizontalOptions="FillAndExpand"
+                    HeightRequest="48"
+                    CornerRadius="12"/>
+
+            <Button Text="Edit"
+                    BackgroundColor="#F3F4F6"
+                    TextColor="#374151"
+                    FontSize="16"
+                    FontAttributes="Bold"
+                    HorizontalOptions="FillAndExpand"
+                    HeightRequest="48"
+                    CornerRadius="12"/>
+        </HorizontalStackLayout>
+    </Grid>
+</ContentPage>
