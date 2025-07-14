@@ -57,7 +57,7 @@
                                                                       HorizontalOptions="Center"
                                                                       VerticalOptions="Center"/>
                                                                <Frame.GestureRecognizers>
-                                                                      <TapGestureRecognizer Command="{Binding AddMemberCommand}"/>
+                                                                      <TapGestureRecognizer Tapped="OnAddMemberClicked"/>
                                                                </Frame.GestureRecognizers>
                                                         </Frame>
                                                         <Label Text="Add"

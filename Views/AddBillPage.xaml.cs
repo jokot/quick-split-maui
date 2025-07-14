@@ -6,4 +6,9 @@ public partial class AddBillPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+	private async void OnAddMemberClicked(object sender, EventArgs e)
+	{
+		await Navigation.PushAsync(new AddMembersPage());
+	}
 }
